@@ -4,6 +4,9 @@ const app = express();
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
 const uri = process.env.Mongo_URL;
+const HoldingsModel = require('./model/HoldingsModel');
+const PositionsModel = require('./model/PositionsModel');
+
 
 // Connecting to MongoDB
 mongoose.connect(uri)
@@ -19,7 +22,93 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
+// app.get("/addHoldings", async (req, res) => {
+
+//   let temHoldings = [
+//     {
+//       name: "BHARTIARTL",
+//       qty: 2,
+//       avg: 538.05,
+//       price: 541.15,
+//       net: "+0.58%",
+//       day: "+2.99%",
+//     },
+//     {
+//       name: "HDFCBANK",
+//       qty: 2,
+//       avg: 1383.4,
+//       price: 1522.35,
+//       net: "+10.04%",
+//       day: "+0.11%",
+//     },
+//     {
+//       name: "HINDUNILVR",
+//       qty: 1,
+//       avg: 2335.85,
+//       price: 2417.4,
+//       net: "+3.49%",
+//       day: "+0.21%",
+//     },
+//   ];
+
+//   temHoldings.forEach((item)=> {
+//     let newHolding = new HoldingsModel({
+//        name: item.name,
+//        qty: item.qty,
+//        avg: item.avg,
+//        price: item.price,
+//        net: item.net,
+//        day: item.day,
+//     });
+//     newHolding.save();
+//   })
+//   res.send({message: "Holdings added successfully"})
+// });
+
+
 // Starting the server
+
+// app.get("/addPostions", async (req, res) => {
+//   let temPositions = [
+//     {
+//       product: "CNEC",
+//       name: "EVEREADY",
+//       qty: 2,
+//       avg: 316.27,
+//       price: 312.35,
+//       net: "+0.58%",
+//       day: "-1.24%",
+//       isLoss: true,
+//     },
+//     {
+//       product: "CNCF",
+//       name: "JUBLFOOD",
+//       qty: 1,
+//       avg: 3124.75,
+//       price: 3082.65,
+//       net: "+10.04%",
+//       day: "-1.35%",
+//       isLoss: true,
+//     },
+//   ];
+
+//   temPositions.forEach((item)=> {
+//     let newPostion = new PositionsModel({
+//         product: item.product,
+//         name: item.name,
+//         qty: item.qty,
+//         avg: item.avg,
+//         price: item.price,
+//         net: item.net,
+//         day: item.day,
+//         isLoss: item.isLoss,
+//     })
+//     newPostion.save();
+//   })
+//   res.send({message: "Positions added successfully"})
+// });
+
+
 app.listen(PORT, ()=> {
     console.log(`Server is running on port ${PORT}`);
 })
