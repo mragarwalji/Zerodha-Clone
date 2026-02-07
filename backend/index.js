@@ -4,11 +4,10 @@ const app = express();
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
 const uri = process.env.Mongo_URL;
-const HoldingsModel = require('./model/HoldingsModel');
-const PositionsModel = require('./model/PositionsModel');
-const OrdersModel = require('./model/OrdersModel');
+
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const tradingRoutes = require("./Routes/tradingRoutes");
 
 
 // Connecting to MongoDB
@@ -23,6 +22,8 @@ mongoose.connect(uri)
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use("/", tradingRoutes);
+
 
 // Root route
 app.get('/', (req, res) => {
@@ -123,33 +124,7 @@ app.get('/', (req, res) => {
 //   res.send({message: "Positions added successfully"})
 // });
 
-app.get('/allHoldings', async(req, res) => {
-  let allHoldings = await HoldingsModel.find({});
-  res.send(allHoldings);
-})
 
-app.get('/allPositions', async(req, res) => {
-  let allPositions = await PositionsModel.find({});
-  res.send(allPositions);
-})
-
-app.post('/newOrder', async(req, res)=> {
-  let newOrder = new OrdersModel({
-    name: req.body.name,
-    qty: req.body.qty,
-    price: req.body.price,
-    mode: req.body.mode,
-  });
-
-  newOrder.save();
-
-  res.send({message: "Order added successfully"})
-})
-
-app.get('/allOrders', async(req, res)=> {
-  let allOrders = await OrdersModel.find({});
-  res.send(allOrders);
-})
 
 
 app.listen(PORT, ()=> {
