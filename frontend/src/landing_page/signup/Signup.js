@@ -23,20 +23,19 @@ function Signup() {
         }
     };
 
-    const handleVerifyOtp = (e) => {
-        e.preventDefault();
-        if (otp === '123456') {
-            // Successful OTP verification
-            // In real app, you would store auth token, user data etc.
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userMobile', mobile);
-            
-            // Redirect to dashboard
-            navigate('/home');
-        } else {
-            alert('Invalid OTP. Please enter 123456 to proceed');
-        }
-    };
+   const handleVerifyOtp = (e) => {
+    e.preventDefault();
+    if (otp === '123456') {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userMobile', mobile);
+
+        // Redirect to another server (port 3001)
+        window.location.href = "http://localhost:3001/";
+    } else {
+        alert('Invalid OTP. Please enter 123456 to proceed');
+    }
+};
+
 
     const handleMobileChange = (e) => {
         const value = e.target.value;

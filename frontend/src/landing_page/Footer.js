@@ -61,7 +61,7 @@ function Footer() {
               Contact us
             </Link>
             <br />
-            <Link to="#" className="footer-link">
+            <Link to="/support" className="footer-link">
               Support portal
             </Link>
             <br />
@@ -81,7 +81,7 @@ function Footer() {
               Circular
             </Link>
             <br />
-            <Link to="#" className="footer-link">
+            <Link to="/about" className="footer-link">
               Z-Connect blog
             </Link>
             <br />
@@ -92,7 +92,7 @@ function Footer() {
           </div>
           <div className="col">
             <h6>Company</h6>
-            <Link to="#" className="footer-link">
+            <Link to="/" className="footer-link">
               About
             </Link>
             <br />

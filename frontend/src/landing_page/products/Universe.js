@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Universe() {
   return (
@@ -11,35 +12,70 @@ function Universe() {
         </p>
 
         <div className="col-4 p-3 mt-4">
-          <img src="media/images/zerodhaFundhouse.png" alt="small Case" style={{width:"50%"}}/>
-          <p className="text-small text-muted text-center mt-2">our asset management venture</p>
+          <img
+            src="media/images/zerodhaFundhouse.png"
+            alt="small Case"
+            style={{ width: "50%" }}
+          />
+          <p className="text-small text-muted text-center mt-2">
+            our asset management venture
+          </p>
         </div>
         <div className="col-4 p-3 mt-4">
-          <img src="media/images/sensibullLogo.svg" alt="small Case" style={{width:"55%"}} />
-          <p className="text-small text-muted text-center mt-2">Option Trading platform </p>
+          <img
+            src="media/images/sensibullLogo.svg"
+            alt="small Case"
+            style={{ width: "55%" }}
+          />
+          <p className="text-small text-muted text-center mt-2">
+            Option Trading platform{" "}
+          </p>
         </div>
         <div className="col-4 p-3 mt-4">
-          <img src="media/images/tijori.svg" alt="small Case" style={{width:"35%"}} />
-          <p className="text-small text-muted text-center mt-2">investment Research platform</p>
+          <img
+            src="media/images/tijori.svg"
+            alt="small Case"
+            style={{ width: "35%" }}
+          />
+          <p className="text-small text-muted text-center mt-2">
+            investment Research platform
+          </p>
         </div>
         <div className="col-4 p-3 mt-4">
-          <img src="media/images/streaklogo.png" alt="small Case" style={{width:"35%"}} />
-          <p className="text-small text-muted text-center mt-2">Systematic Trading platform</p>
+          <img
+            src="media/images/streaklogo.png"
+            alt="small Case"
+            style={{ width: "35%" }}
+          />
+          <p className="text-small text-muted text-center mt-2">
+            Systematic Trading platform
+          </p>
         </div>
         <div className="col-4 p-3 mt-4">
           <img src="media/images/smallcaseLogo.png" alt="small Case" />
-          <p className="text-small text-muted text-center mt-2">Thematic investment platform</p>
+          <p className="text-small text-muted text-center mt-2">
+            Thematic investment platform
+          </p>
         </div>
         <div className="col-4 p-2 mt-4">
-          <img src="media/images/dittoLogo.png" alt="small Case" style={{width:"35%"}}/>
-          <p className="text-small text-muted text-center mt-2">Personalized advice on life <br />and health insurance</p>
+          <img
+            src="media/images/dittoLogo.png"
+            alt="small Case"
+            style={{ width: "35%" }}
+          />
+          <p className="text-small text-muted text-center mt-2">
+            Personalized advice on life <br />
+            and health insurance
+          </p>
         </div>
-        <button
-          className="p-2 btn btn-primary fs-5 mb-5"
-          style={{ width: "20%", margin: "0 auto" }}
-        >
-          Signup Now
-        </button>
+        <Link to="/signup">
+          <button
+            className="p-2 btn btn-primary fs-5 mb-5"
+            style={{ width: "20%", margin: "0 auto" }}
+          >
+            Signup Now
+          </button>
+        </Link>
       </div>
     </div>
   );
